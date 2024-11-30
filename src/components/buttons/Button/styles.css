@@ -1,0 +1,21 @@
+.button {
+  border-radius: 3.6rem;
+  font-weight: bold;
+  color: var(--white-two);
+  background-color: transparent;
+  border-style: solid;
+  border-color: var(--white-two);
+  cursor: pointer;
+}
+
+.button_lg {
+  padding: 2rem 3.4rem;
+  font-size: 1.8rem;
+  border-width: 3px;
+}
+
+.button_md {
+  padding: 0.875rem 1rem 0.813rem;
+  font-size: 0.788rem;
+  border-width: 2px;
+}
