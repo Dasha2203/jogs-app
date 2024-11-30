@@ -1,0 +1,16 @@
+.input-date {
+  font-size: 1rem;
+}
+
+.input-date::placeholder {
+  font-size: 1rem;
+}
+
+.input-date::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+.input-date:not(:valid)::-webkit-datetime-edit {
+  color: transparent;
+}
