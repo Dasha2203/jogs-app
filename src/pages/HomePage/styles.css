@@ -1,0 +1,18 @@
+.let-me-section {
+  margin: 0 auto 0;
+  padding: 7.7rem 3.6rem;
+  width: 100%;
+  max-width: 50.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5.6rem;
+  border-radius: 4.4rem;
+  background-color: var(--baby-purple);
+}
+
+.let-me-section__img {
+  width: 100%;
+  max-width: 16rem;
+  color: var(--white-two);
+}
