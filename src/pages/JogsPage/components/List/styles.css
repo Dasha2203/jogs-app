@@ -1,5 +1,5 @@
 .list {
-  margin: 0 auto;
+  margin: 3.125rem auto;
   display: flex;
   flex-direction: column;
   width: fit-content;
@@ -8,4 +8,15 @@
 
 .list .card:not(:last-child){
   margin-bottom: 4.896rem;
+}
+
+.section-jogs .loader {
+  margin: 0 auto;
+  display: block;
+}
+
+.section-jogs .button-icon {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
 }
