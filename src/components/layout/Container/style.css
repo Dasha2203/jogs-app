@@ -3,3 +3,9 @@
   width: 100%;
   max-width: 38.375rem;
 }
+
+@media (max-width: 48rem) {
+  .container {
+    max-width: 27.083rem;
+  }
+}
