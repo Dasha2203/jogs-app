@@ -6,5 +6,5 @@
 
 .layout__container {
   flex-grow: 1;
-  background-color: var(--white);
+  background-color: var(--white-two);
 }

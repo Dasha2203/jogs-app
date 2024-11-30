@@ -12,7 +12,7 @@ const Card = ({ icon: Icon, subtitle, listProps }: Props) => {
         {listProps.length && (
           <ul className="card__list">
             {listProps.map(({label, value}) => (
-              <li><span>{label}</span> {value}</li>
+              <li><span>{label}&#58;</span> {value}</li>
             ))}
           </ul>
         )}

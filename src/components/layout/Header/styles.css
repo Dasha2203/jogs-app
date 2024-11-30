@@ -1,0 +1,46 @@
+.header {
+  padding: 1.875rem 0;
+  background-color: var(--apple-green);
+  color: var(--white-two);
+}
+
+.header__container {
+  padding-inline: 2.313rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  max-width: 9.188rem;
+  width: 100%;
+}
+
+.header__navigation {
+  display: flex;
+  gap: 2.81rem;
+}
+
+.header__navigation-link {
+  position: relative;
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.header__navigation-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.253rem;
+  display: block;
+  height: 0.125rem;
+  width: 100%;
+  background-color: transparent;
+  transition: background-color .3s ease;
+}
+
+.header__navigation-link:hover::after{
+  background-color: var(--white-two);
+}

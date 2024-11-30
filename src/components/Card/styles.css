@@ -1,5 +1,6 @@
 .card {
   display: flex;
+  width: fit-content;
   gap: 2.875rem;
   font-size: 0.875rem;
 }
