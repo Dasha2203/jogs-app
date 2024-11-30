@@ -1,0 +1,11 @@
+.info {
+  padding-top: 5.313rem;
+}
+
+.info .title {
+  margin-bottom: 0.938rem;
+}
+
+.info .text:not(:last-of-type) {
+  margin-bottom: 1.875rem;
+}
