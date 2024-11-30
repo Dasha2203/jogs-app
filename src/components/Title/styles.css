@@ -1,0 +1,6 @@
+.title {
+  color: var(--apple-green);
+  font-size: 2.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
