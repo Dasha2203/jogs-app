@@ -1,0 +1,20 @@
+.field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.form-add-jog .field:not(:last-of-type) {
+  margin-bottom: 1.563rem;
+}
+
+.form-add-jog .input-field {
+  width: 100%;
+  max-width: 14.75rem;
+}
+
+.form-add-jog .button {
+  margin-top: 2.875rem;
+  width: 100%;
+}
