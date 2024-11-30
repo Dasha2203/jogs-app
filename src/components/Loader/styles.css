@@ -1,12 +1,29 @@
 .loader {
   width: 48px;
   height: 48px;
-  border: 5px solid var(--apple-green);
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--apple-green);
   border-bottom-color: transparent;
   border-radius: 50%;
   display: inline-block;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
+}
+
+.loader.loader_green {
+  border-color: var(--apple-green);
+  border-bottom-color: transparent;
+}
+
+.loader.loader_white{
+  border-color: var(--white-two);
+  border-bottom-color: transparent;
+}
+
+.loader.loader_purple {
+  border-color: var(--baby-purple);
+  border-bottom-color: transparent;
 }
 
 @keyframes rotation {
