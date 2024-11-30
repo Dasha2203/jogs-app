@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import BearIcon from '../../assets/icons/BearIcon';
-import Button from '../../components/Button';
+import Button from '../../components/buttons/Button';
 import Layout from '../../components/layout/Layout';
 import './styles.css';
 import { signin } from '../../api/auth/auth';
