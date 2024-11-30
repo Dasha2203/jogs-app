@@ -14,5 +14,3 @@ const FilterIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 export default FilterIcon;
-
-x
