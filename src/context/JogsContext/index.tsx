@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from 'react';
-import { createJog, getJogs } from '../../api/jogs';
+import { createJog, getJogs, patchJog } from '../../api/jogs';
 import { Jog } from '../../models/jogs';
 import { AddJogCredential } from '../../api/jogs/types';
 import { JogsContextType } from './types';
@@ -33,6 +33,26 @@ const JogsProvider = ({ children }: { children?: React.ReactNode }) => {
       }
 
       setJogs([]);
+    } catch (error) {
+      console.log(error);
+      setError('Smth went wrong');
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  async function updateJog(value: Jog) {
+    try {
+      setIsLoading(true);
+      const data = await patchJog(value);
+
+      if (data) {
+        const idx = jogs.findIndex(({ id }) => data.id === id);
+
+        if (idx !== -1) {
+          setJogs([...jogs.slice(0, idx), data, ...jogs.slice(idx + 1)]);
+        }
+      }
     } catch (error) {
       console.log(error);
       setError('Smth went wrong');
@@ -80,7 +100,7 @@ const JogsProvider = ({ children }: { children?: React.ReactNode }) => {
         isLoading,
         jogs,
         addJog,
-        updateJog: (value) => {},
+        updateJog,
         fetchJogs,
         getRangeJogs
       }}
