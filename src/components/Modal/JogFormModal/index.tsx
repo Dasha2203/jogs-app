@@ -1,24 +1,25 @@
 import { useState } from 'react';
 import Modal from '..';
 import Input from '../../forms/Input';
-import { Props } from './types';
-import Button from '../../Button';
-import './styles.css';
+import Button from '../../buttons/Button';
 import DateInput from '../../forms/DateInput';
 import Loader from '../../Loader';
+import { REGEX_NUMBER } from '../../../const';
+import { Props } from './types';
+import './styles.css';
 
-const JogFormModal = ({ onSubmit, isLoading, ...props }: Props) => {
-  const [distance, setDistance] = useState('');
-  const [time, setTime] = useState('');
-  const [selectedDate, setSelectedDate] = useState('');
+const JogFormModal = ({ onSubmit, jog, isLoading, ...props }: Props) => {
+  const [distance, setDistance] = useState(jog?.distance ? String(jog.distance) : '');
+  const [time, setTime] = useState(jog?.time ? String(jog.time) : '');
+  const [selectedDate, setSelectedDate] = useState(jog?.date ? jog.date.split('T')[0] : '');
   const [formError, setFormError] = useState('');
 
   function handleChangeDistance(value: string) {
-    setDistance(value.replace(/[^0-9]/g, ''));
+    setDistance(value.replace(REGEX_NUMBER, ''));
   }
 
   function handleChangeTime(value: string) {
-    setTime(value.replace(/[^0-9]/g, ''));
+    setTime(value.replace(REGEX_NUMBER, ''));
   }
 
   function handleChangeDate (event: React.ChangeEvent<HTMLInputElement>) {
@@ -45,9 +46,10 @@ const JogFormModal = ({ onSubmit, isLoading, ...props }: Props) => {
     }
 
     await onSubmit({
+      ...(jog ? jog : {}),
       date: date.toISOString(),
       distance: Number(distance),
-      time: Number(time)
+      time: Number(time),
     });
 
     props.onClose(false);
