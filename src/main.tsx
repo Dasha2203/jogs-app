@@ -1,11 +1,11 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { createRoot } from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import AppProvider from './context/AppContext/index.tsx';
 import './index.css';
 import HomePage from './pages/HomePage/index.tsx';
-import NotFoundPage from './pages/NotFoundPage/index.tsx';
-import JogsPage from './pages/JogsPage/index.tsx';
 import InfoPage from './pages/InfoPage/index.tsx';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import JogsPage from './pages/JogsPage/index.tsx';
+import NotFoundPage from './pages/NotFoundPage/index.tsx';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -15,7 +15,6 @@ const router = createBrowserRouter([
   {
     path: '/jogs',
     element: <JogsPage />,
-    errorElement: <NotFoundPage />,
   },
   {
     path: '/info',
@@ -24,5 +23,8 @@ const router = createBrowserRouter([
   },
 ]);
 
-createRoot(document.getElementById('root')!).render(<RouterProvider router={router} />,
+createRoot(document.getElementById('root')!).render(
+  <AppProvider>
+    <RouterProvider router={router} />
+  </AppProvider>,
 )
