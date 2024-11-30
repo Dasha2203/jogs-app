@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Layout from '../../components/layout/Layout';
-import { getJogs } from '../../api/jogs';
 import JogsProvider from '../../context/JogsContext';
 import List from './components/List';
 
