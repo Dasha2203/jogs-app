@@ -1,4 +1,9 @@
 .header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   padding: 1.875rem 0;
   background-color: var(--apple-green);
   color: var(--white-two);
@@ -22,6 +27,7 @@
 }
 
 .header__navigation-link {
+  margin-left: auto;
   position: relative;
   display: block;
   text-transform: uppercase;

@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
 import LogoIcon from '../../../assets/icons/LogoIcon';
 import './styles.css';
+import CheckButtonIcon from '../../buttons/CheckButtonIcon';
+import FilterIcon from '../../../assets/icons/FilterIcon';
+import { useAppContext } from '../../../context/AppContext';
 
 const headerNavigation = [
   {
@@ -18,6 +21,11 @@ const headerNavigation = [
 ]
 
 const Header = () => {
+  const { isOpenFilter, setIsOpenFilter } = useAppContext();
+
+  function handleToggleFilter() {
+    setIsOpenFilter(!isOpenFilter);
+  }
 
   return (
     <header className="header">
@@ -38,6 +46,14 @@ const Header = () => {
             ))}
           </nav>
         )}
+        <CheckButtonIcon
+          color="green"
+          ariaLabel={isOpenFilter ? 'Hide filter' : 'Open filter'}
+          isSelected={isOpenFilter}
+          onClick={handleToggleFilter}
+        >
+          <FilterIcon />
+        </CheckButtonIcon>
       </div>
     </header>
   )
