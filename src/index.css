@@ -47,3 +47,11 @@ body {
   color: red;
   font-size: 1.4rem
 }
+
+.relative {
+  position: relative;
+}
+
+.w-full {
+  width: 100%;
+}
