@@ -1,9 +1,9 @@
 import './styles.css';
 import { Props } from './types';
 
-const Card = ({ icon: Icon, subtitle, listProps }: Props) => {
+const Card = ({ icon: Icon, subtitle, listProps, ...props }: Props) => {
   return (
-    <div className="card">
+    <div className="card" {...props}>
       <div className="card__img">
         <Icon />
       </div>
@@ -11,8 +11,8 @@ const Card = ({ icon: Icon, subtitle, listProps }: Props) => {
         <div className="card__subtitle">{subtitle}</div>
         {listProps.length && (
           <ul className="card__list">
-            {listProps.map(({label, value}) => (
-              <li><span>{label}&#58;</span> {value}</li>
+            {listProps.map(({label, value}, idx) => (
+              <li key={idx}><span>{label}&#58;</span> {value}</li>
             ))}
           </ul>
         )}
