@@ -39,12 +39,6 @@ describe("Test Jogs page", () => {
       }
 
     }
-    // mockedAuthAxios.get.mockResolvedValue({
-    //   data: [
-    //     { id: 1, date: '2024-12-01', time: '30', distance: '5' },
-    //     { id: 2, date: '2024-12-02', time: '45', distance: '7' },
-    //   ],
-    // });
   });
 
   afterEach(() => {

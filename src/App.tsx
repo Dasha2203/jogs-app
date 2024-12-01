@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage';
 import InfoPage from './pages/InfoPage';
 import JogsPage from './pages/JogsPage';
 import NotFoundPage from './pages/NotFoundPage';
+import ContactsPage from './pages/ContactsPage';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,11 @@ const router = createBrowserRouter([
     element: <InfoPage />,
     errorElement: <NotFoundPage />,
   },
+  {
+    path: '/contact-us',
+    element: <ContactsPage />,
+    errorElement: <NotFoundPage />,
+  }
 ]);
 
 function App() {
