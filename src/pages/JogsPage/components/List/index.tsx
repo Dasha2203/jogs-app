@@ -27,11 +27,9 @@ const List = () => {
     setIsOpen(true)
   }
 
-  if (isLoading && !isOpen) return <div className="list"><Loader className="" /></div>;
-  if (!jogs.length) return 'Not found';
-
   return (
     <div className="section-jogs w-full relative">
+      {isLoading && !isOpen && <Loader />}
       {isOpenFilter && (
         <JogFilter />
       )}
@@ -40,30 +38,32 @@ const List = () => {
         color="green"
         onClick={() => setIsOpen(true)}
       />
-      <div className="list">
-        {jogs.map(({ id, speed, time, distance, date, ...props }) => (
-          <Card
-            key={id}
-            icon={JogIcon}
-            subtitle={getDate(date)}
-            onClick={() => handleSelectedJog({ id, speed, time, distance, date, ...props })}
-            listProps={[
-              {
-                label: 'Speed',
-                value: speed + '',
-              },
-              {
-                label: 'Distance',
-                value: distance + ' km',
-              },
-              {
-                label: 'Time',
-                value: time + ' min',
-              },
-            ]}
-          />
-        ))}
-      </div>
+      {!isLoading && (
+        <div className="list">
+          {jogs.map(({ id, speed, time, distance, date, ...props }) => (
+            <Card
+              key={id}
+              icon={JogIcon}
+              subtitle={getDate(date)}
+              onClick={() => handleSelectedJog({ id, speed, time, distance, date, ...props })}
+              listProps={[
+                {
+                  label: 'Speed',
+                  value: speed + '',
+                },
+                {
+                  label: 'Distance',
+                  value: distance + ' km',
+                },
+                {
+                  label: 'Time',
+                  value: time + ' min',
+                },
+              ]}
+            />
+          ))}
+        </div>
+      )}
 
       {isOpen && (
         <JogFormModal
