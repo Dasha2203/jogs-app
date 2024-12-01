@@ -1,12 +1,12 @@
 .jog-filter {
   position: sticky;
   top: 0;
+  padding: 1rem 0;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2.813rem;
-  padding: 1rem 0;
   background-color: var(--white);
 }
 
@@ -14,12 +14,29 @@
   width: 100%;
   max-width: 6.25rem;
   font-size: 1rem;
+  border-radius: 11px;
 }
 
-.label {
+.jog-filter .label {
   display: flex;
   align-items: center;
   gap: 0.938rem;
   font-size: 0.813rem;
   color: #747474;
+}
+
+@media (max-width: 48rem) {
+  .jog-filter {
+    padding: 1.33rem 0;
+    gap: 2.916rem;
+  }
+
+  .jog-filter .label {
+    font-size: 1.083rem;
+    gap: 1.333rem;
+  }
+
+  .jog-filter .input-date {
+    max-width: 6rem;
+  }
 }
