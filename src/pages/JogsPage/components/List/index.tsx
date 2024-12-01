@@ -35,9 +35,11 @@ const List = () => {
       {isOpenFilter && (
         <JogFilter />
       )}
-      <ButtonIcon color="green" onClick={() => setIsOpen(true)}>
-        <AddIcon />
-      </ButtonIcon>
+      <ButtonIcon
+        icon={AddIcon}
+        color="green"
+        onClick={() => setIsOpen(true)}
+      />
       <div className="list">
         {jogs.map(({ id, speed, time, distance, date, ...props }) => (
           <Card

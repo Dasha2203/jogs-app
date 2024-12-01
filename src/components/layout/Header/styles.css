@@ -22,8 +22,14 @@
 }
 
 .header__navigation {
+  margin-left: auto;
+  margin-right: 3.063rem;
   display: flex;
   gap: 2.81rem;
+}
+
+.header__navigation.header__navigation_open {
+  transform: translateX(0);
 }
 
 .header__navigation-link {
@@ -49,4 +55,29 @@
 
 .header__navigation-link:hover::after{
   background-color: var(--white-two);
+}
+
+@media (max-width: 48rem) {
+  .header {
+    padding: 1.666rem 2.083rem;
+  }
+
+  .header__navigation  {
+    position: fixed;
+    inset: 0;
+    transform: translateX(-100%);
+  }
+
+  .header__container {
+    padding-inline: 0;
+  }
+
+  .header__container .button-check-icon {
+    margin-left: auto;
+    margin-right: 3.25rem;
+  }
+
+  .header__logo {
+    max-width: 8.166rem;
+  }
 }

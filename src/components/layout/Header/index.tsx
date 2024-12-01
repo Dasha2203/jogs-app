@@ -1,9 +1,13 @@
 import { Link } from 'react-router-dom';
 import LogoIcon from '../../../assets/icons/LogoIcon';
-import './styles.css';
 import CheckButtonIcon from '../../buttons/CheckButtonIcon';
 import FilterIcon from '../../../assets/icons/FilterIcon';
 import { useAppContext } from '../../../context/AppContext';
+import './styles.css';
+import MenuButton from './MenuButton';
+import { useState } from 'react';
+import clsx from 'clsx';
+import MobileNavigation from './MobileNavigation';
 
 const headerNavigation = [
   {
@@ -22,19 +26,29 @@ const headerNavigation = [
 
 const Header = () => {
   const { isOpenFilter, setIsOpenFilter } = useAppContext();
+  const [ isOpenMenu, setIsOpenMenu ] = useState(false);
 
   function handleToggleFilter() {
     setIsOpenFilter(!isOpenFilter);
   }
 
+  function handleToggleMenu() {
+    setIsOpenMenu(!isOpenMenu);
+  }
+
   return (
     <header className="header">
       <div className="header__container">
-        <Link to="/">
+        <Link to="/" aria-label="Go to main page">
           <LogoIcon className="header__logo" />
         </Link>
+
         {headerNavigation.length && (
-          <nav className="header__navigation">
+          <nav className={
+            clsx(
+              'header__navigation',
+            )
+          }>
             {headerNavigation.map(({ name, link }, idx) => (
               <Link
                 key={idx}
@@ -54,6 +68,8 @@ const Header = () => {
         >
           <FilterIcon />
         </CheckButtonIcon>
+        <MenuButton onClick={handleToggleMenu} isOpen={isOpenMenu} />
+        <MobileNavigation list={headerNavigation} setIsOpen={setIsOpenMenu} isOpen={isOpenMenu} />
       </div>
     </header>
   )
