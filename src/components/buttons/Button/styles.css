@@ -9,8 +9,8 @@
 }
 
 .button_lg {
-  padding: 2rem 3.4rem;
-  font-size: 1.8rem;
+  padding: 1.25rem 2.125rem 1.188rem;
+  font-size: 1.125rem;
   border-width: 3px;
 }
 
@@ -18,4 +18,11 @@
   padding: 0.875rem 1rem 0.813rem;
   font-size: 0.788rem;
   border-width: 2px;
+}
+
+@media (max-width: 48rem) {
+  .button_lg {
+    padding: 1.666rem 2.83rem 1.583rem;
+    font-size: 1.5rem;
+  }
 }
