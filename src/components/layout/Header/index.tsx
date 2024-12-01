@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import LogoIcon from '../../../assets/icons/LogoIcon';
 import CheckButtonIcon from '../../buttons/CheckButtonIcon';
 import FilterIcon from '../../../assets/icons/FilterIcon';
@@ -36,12 +36,16 @@ const Header = () => {
     setIsOpenMenu(!isOpenMenu);
   }
 
+  function getActiveLink ({ isActive }: {isActive: boolean}) {
+    return clsx('header__navigation-link', isActive && 'header__navigation-link_active');
+  }
+
   return (
     <header className="header">
       <div className="header__container">
-        <Link to="/" aria-label="Go to main page">
+        <NavLink to="/" aria-label="Go to main page">
           <LogoIcon className="header__logo" />
-        </Link>
+        </NavLink>
 
         {headerNavigation.length && (
           <nav className={
@@ -50,13 +54,13 @@ const Header = () => {
             )
           }>
             {headerNavigation.map(({ name, link }, idx) => (
-              <Link
+              <NavLink
                 key={idx}
                 to={link}
-                className="header__navigation-link"
+                className={getActiveLink}
               >
                 {name}
-              </Link>
+              </NavLink>
             ))}
           </nav>
         )}
@@ -68,8 +72,12 @@ const Header = () => {
         >
           <FilterIcon />
         </CheckButtonIcon>
-        <MenuButton onClick={handleToggleMenu} isOpen={isOpenMenu} />
-        <MobileNavigation list={headerNavigation} setIsOpen={setIsOpenMenu} isOpen={isOpenMenu} />
+        <MenuButton onClick={handleToggleMenu} />
+        <MobileNavigation
+          list={headerNavigation}
+          setIsOpen={setIsOpenMenu}
+          isOpen={isOpenMenu}
+        />
       </div>
     </header>
   )
