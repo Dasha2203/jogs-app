@@ -3,6 +3,7 @@ import { Jog } from '../../models/jogs';
 
 export type JogsContextType = {
   jogs: Jog[];
+  filteredJogs: Jog[];
   error: string;
   isLoading: boolean;
   fetchJogs: () => Promise<void>;

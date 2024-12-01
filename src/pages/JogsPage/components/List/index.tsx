@@ -11,10 +11,11 @@ import { useAppContext } from '../../../../context/AppContext';
 import JogFilter from '../JogFilter';
 import './styles.css';
 import { Jog } from '../../../../models/jogs';
+import NoResult from '../NoResult';
 
 const List = () => {
   const [ isOpen, setIsOpen ] = useState<boolean>(false);
-  const { jogs, fetchJogs, addJog, updateJog, isLoading } = useJogsContext();
+  const { filteredJogs, fetchJogs, addJog, updateJog, isLoading } = useJogsContext();
   const [ selectedJog, setSelectedJog ] = useState<Jog | null>(null);
   const { isOpenFilter } = useAppContext();
 
@@ -27,20 +28,28 @@ const List = () => {
     setIsOpen(true)
   }
 
+  function handleCreate() {
+    setIsOpen(true);
+  }
+
   return (
     <div className="section-jogs w-full relative">
-      {isLoading && !isOpen && <Loader />}
       {isOpenFilter && (
         <JogFilter />
       )}
-      <ButtonIcon
+      {isLoading && !isOpen && <Loader />}
+      {!filteredJogs.length && !isLoading && <NoResult onClick={handleCreate} />}
+      {filteredJogs.length ? (
+        <ButtonIcon
         icon={AddIcon}
         color="green"
-        onClick={() => setIsOpen(true)}
-      />
+        onClick={handleCreate}
+        />
+      ) : null}
+
       {!isLoading && (
         <div className="list">
-          {jogs.map(({ id, speed, time, distance, date, ...props }) => (
+          {filteredJogs.map(({ id, speed, time, distance, date, ...props }) => (
             <Card
               key={id}
               icon={JogIcon}
@@ -68,7 +77,6 @@ const List = () => {
       {isOpen && (
         <JogFormModal
           onClose={setIsOpen}
-          children={'content'}
           onSubmit={selectedJog ? updateJog : addJog}
           isLoading={isLoading}
           jog={selectedJog}

@@ -6,6 +6,7 @@ import { JogsContextType } from './types';
 
 const JogsContext = createContext<JogsContextType>({
   jogs: [],
+  filteredJogs: [],
   error: '',
   isLoading: false,
   getRangeJogs: () => {},
@@ -18,6 +19,7 @@ export const useJogsContext = () => useContext(JogsContext);
 
 const JogsProvider = ({ children }: { children?: React.ReactNode }) => {
   const [ jogs, setJogs ] = useState<Jog[]>([]);
+  const [ filteredJogs, setFilteredJogs ] = useState<Jog[]>([]);
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -90,7 +92,7 @@ const JogsProvider = ({ children }: { children?: React.ReactNode }) => {
       return date >= startDate && date <= endDate;
     })
 
-    setJogs([...filteredJogs]);
+    setFilteredJogs([...filteredJogs]);
   }
 
   return (
@@ -99,6 +101,7 @@ const JogsProvider = ({ children }: { children?: React.ReactNode }) => {
         error,
         isLoading,
         jogs,
+        filteredJogs,
         addJog,
         updateJog,
         fetchJogs,

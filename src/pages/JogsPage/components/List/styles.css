@@ -20,6 +20,10 @@
   right: 2.5rem;
 }
 
+.section-jogs .no-result-section {
+  margin: 0.677rem auto;
+}
+
 @media (max-width: 48rem) {
   .list .card {
     justify-content: center;
@@ -30,8 +34,20 @@
     border-bottom: 0.166rem solid var(--white-three);
   }
 
+  .section-jogs {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
   .section-jogs .button-icon {
     bottom: 3.5rem;
     right: 3.5rem;
+  }
+
+  .section-jogs .no-result-section {
+    margin-top: auto;
+    margin-bottom: 5.916rem;
   }
 }
