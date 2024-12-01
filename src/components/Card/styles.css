@@ -1,4 +1,5 @@
 .card {
+  padding: 2.448rem;
   display: flex;
   width: fit-content;
   gap: 2.875rem;
@@ -43,4 +44,25 @@
 
 .card__list li span {
   color: #202020;
+}
+
+@media (max-width: 48rem) {
+  .card {
+    padding: 3.75rem 0;
+    gap: 3.833rem;
+    font-size: 1.166rem;
+  }
+
+  .card__subtitle {
+    margin-bottom: 0.75rem;
+  }
+
+  .card__img {
+    width: 7.25rem;
+    height: 7.25rem;
+  }
+
+  .card__list li:not(:last-child) {
+    margin-bottom: 1rem;
+  }
 }
