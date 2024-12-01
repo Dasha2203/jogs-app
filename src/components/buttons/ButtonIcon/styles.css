@@ -1,10 +1,9 @@
 .button-icon {
-  width: 3.75rem;
-  height: 3.75rem;
   border: none;
   background-color: transparent;
   transition: opacity .3s ease;
   cursor: pointer;
+  -webkit-tap-highlight-color:  transparent;
 }
 
 .button-icon:hover {
@@ -26,4 +25,18 @@
 
 .button-icon_purple {
   color: var(--baby-purple);
+}
+
+.button-icon_gray {
+  color: #b0abab;
+}
+
+.button-icon_lg {
+  width: 3.75rem;
+  height: 3.75rem;
+}
+
+.button-icon_xs {
+  width: 1.75rem;
+  height: 1.75rem;
 }
