@@ -3,7 +3,7 @@ import { Jog } from '../../../models/jogs';
 import {Props as ModalProps} from '../types';
 
 export type Props = ModalProps & {
-  onSubmit: (value: AddJogCredential | Jog) => Promise<void>;
+  onSubmit: (value: Jog | AddJogCredential) => Promise<void>;
   isLoading?: boolean;
   jog?: Jog | null;
 }

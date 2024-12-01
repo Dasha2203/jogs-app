@@ -53,7 +53,7 @@ const JogFormModal = ({ onSubmit, jog, isLoading, ...props }: Props) => {
       setFormError('You need to select Date');
       return;
     }
-
+    console.log('here')
     await onSubmit({
       ...(jog ? jog : {}),
       date: date.toISOString(),
