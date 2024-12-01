@@ -5,6 +5,7 @@
   background-color: var(--white-two);
   transform: translateY(-100%);
   transition: transform .3s ease;
+  overflow: hidden;
 }
 
 .mobile-menu__header {

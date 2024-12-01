@@ -26,3 +26,10 @@
   border-color: #62aa14;
   color: #62aa14;
 }
+
+@media (max-width: 48rem) {
+  .button-check-icon {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+}

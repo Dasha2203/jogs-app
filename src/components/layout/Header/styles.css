@@ -63,9 +63,7 @@
   }
 
   .header__navigation  {
-    position: fixed;
-    inset: 0;
-    transform: translateX(-100%);
+    display: none;
   }
 
   .header__container {
