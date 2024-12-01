@@ -27,6 +27,12 @@
   color: #62aa14;
 }
 
+@media (hover: none) {
+  .button-check-icon:hover {
+    opacity: 1;
+  }
+}
+
 @media (max-width: 48rem) {
   .button-check-icon {
     width: 3.25rem;

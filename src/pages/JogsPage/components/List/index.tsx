@@ -12,6 +12,7 @@ import JogFilter from '../JogFilter';
 import './styles.css';
 import { Jog } from '../../../../models/jogs';
 import NoResult from '../NoResult';
+import { AddJogCredential } from '../../../../api/jogs/types';
 
 const List = () => {
   const [ isOpen, setIsOpen ] = useState<boolean>(false);
@@ -30,6 +31,16 @@ const List = () => {
 
   function handleCreate() {
     setIsOpen(true);
+  }
+
+  async function handleSubmit(value: Jog | AddJogCredential) {
+    if ('id' in value) {
+      await updateJog(value);
+
+      return;
+    }
+
+    await addJog(value)
   }
 
   return (
@@ -77,7 +88,7 @@ const List = () => {
       {isOpen && (
         <JogFormModal
           onClose={setIsOpen}
-          onSubmit={selectedJog ? updateJog : addJog}
+          onSubmit={handleSubmit}
           isLoading={isLoading}
           jog={selectedJog}
         />

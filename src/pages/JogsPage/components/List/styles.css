@@ -7,6 +7,12 @@
 
 .list .card {
   margin: 0 auto;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.list .card:hover {
+  opacity: .7;
 }
 
 .section-jogs .loader {
@@ -22,6 +28,12 @@
 
 .section-jogs .no-result-section {
   margin: 0.677rem auto;
+}
+
+@media (hover: none) {
+  .list .card:hover {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 48rem) {

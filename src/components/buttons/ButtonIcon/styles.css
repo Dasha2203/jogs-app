@@ -41,6 +41,12 @@
   height: 1.75rem;
 }
 
+@media (hover: none) {
+  .button-icon:hover {
+    opacity: 1;
+  }
+}
+
 @media (max-width: 48rem) {
   .button-icon_lg {
     width: 3.916rem;
