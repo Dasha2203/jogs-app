@@ -30,6 +30,7 @@ const JogsProvider = ({ children }: { children?: React.ReactNode }) => {
 
       if (data) {
         setJogs([...data]);
+        setFilteredJogs([...data]);
 
         return;
       }
