@@ -33,6 +33,7 @@ const Header = () => {
   }
 
   function handleToggleMenu() {
+    document.body.classList.toggle('no-scroll-y');
     setIsOpenMenu(!isOpenMenu);
   }
 
@@ -75,7 +76,7 @@ const Header = () => {
         <MenuButton onClick={handleToggleMenu} />
         <MobileNavigation
           list={headerNavigation}
-          setIsOpen={setIsOpenMenu}
+          setIsOpen={handleToggleMenu}
           isOpen={isOpenMenu}
         />
       </div>

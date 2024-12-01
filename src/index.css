@@ -61,6 +61,10 @@ body {
   font-family: 'SFUIText', sans-serif;
 }
 
+.no-scroll-y {
+  overflow-y: hidden;
+}
+
 .error {
   color: red;
   font-size: 1.4rem

@@ -1,6 +1,8 @@
 .mobile-menu {
   position: fixed;
   inset: 0;
+  display: flex;
+  flex-direction: column;
   padding: 1.666rem 2.083rem;
   background-color: var(--white-two);
   transform: translateY(-100%);
@@ -25,8 +27,9 @@
 }
 
 .mobile__navigation {
-  margin-top: 35%;
+  margin: auto 0;
   text-align: center;
+  overflow-y: scroll;
 }
 
 .mobile__navigation ul {
