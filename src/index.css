@@ -30,6 +30,24 @@ html {
   font-size: calc(100vw / 1440 * 16);
 }
 
+@media (max-width: 80rem) {
+  html {
+    font-size: calc(100vw / 1280 * 16);
+  }
+}
+
+@media (max-width: 64rem) {
+  html {
+    font-size: calc(100vw / 1024 * 16);
+  }
+}
+
+@media (max-width: 48rem) {
+  html {
+    font-size: calc(100vw / 500 * 16);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
