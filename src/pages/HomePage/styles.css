@@ -1,18 +1,35 @@
 .let-me-section {
-  margin: 0 auto 0;
-  padding: 7.7rem 3.6rem;
+  margin: auto ;
+  padding: 4.813rem 2.25rem 2.25rem;
   width: 100%;
-  max-width: 50.3rem;
+  max-width: 31.438rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5.6rem;
-  border-radius: 4.4rem;
+  gap: 3.5rem;
+  border-radius: 2.75rem;
   background-color: var(--baby-purple);
 }
 
 .let-me-section__img {
   width: 100%;
-  max-width: 16rem;
+  max-width: 10rem;
   color: var(--white-two);
+}
+
+@media (max-width: 48rem) {
+  .let-me-section {
+    background-color: var(--white-two);
+    gap: 8.583rem;
+  }
+
+  .let-me-section__img {
+    max-width: 13.333rem;
+    color: var(--baby-purple);
+  }
+
+  .let-me-section .button {
+    color: var(--baby-purple);
+    border-color: var(--baby-purple);
+  }
 }

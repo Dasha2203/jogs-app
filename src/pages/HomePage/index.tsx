@@ -30,7 +30,7 @@ const HomePage = () => {
   }, [])
 
   return (
-    <Layout>
+    <Layout type={'simple'}>
       <div className="let-me-section">
         <BearIcon className="let-me-section__img" />
         <Button as="button" onClick={handleClick}>Let me in</Button>
