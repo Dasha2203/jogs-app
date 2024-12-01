@@ -19,6 +19,7 @@ export const createJog = async (value: AddJogCredential) => {
     return data.jogs[0];
   } catch (error) {
     console.log(error);
+    throw new Error('Smth went srong');
   }
 }
 
@@ -33,5 +34,6 @@ export const patchJog = async ({ id, distance, date, time }: Jog) => {
     return data.jogs[0];
   } catch (error) {
     console.log(error);
+    throw new Error('Smth went srong');
   }
 }
