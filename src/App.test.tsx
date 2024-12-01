@@ -17,6 +17,8 @@ describe("Test App", () => {
     );
     const textBtn = 'Let me in';
     const button = screen.getByRole('button');
+
     expect(button).toHaveTextContent(textBtn);
+    expect(button).toMatchSnapshot();
   })
 });

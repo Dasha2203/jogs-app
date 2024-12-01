@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test App Check "Let me in" 1`] = `
+<button
+  class="button button_lg"
+  type="button"
+>
+  Let me in
+</button>
+`;

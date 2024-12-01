@@ -2,4 +2,5 @@ export type Props = Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'childre
   color?: 'green' | 'white' | 'purple' | 'gray';
   size?: 'lg' | 'xs';
   icon: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
+  dataTestId?: string;
 }

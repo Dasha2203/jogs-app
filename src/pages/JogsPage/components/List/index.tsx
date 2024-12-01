@@ -52,9 +52,10 @@ const List = () => {
       {!filteredJogs.length && !isLoading && <NoResult onClick={handleCreate} />}
       {filteredJogs.length ? (
         <ButtonIcon
-        icon={AddIcon}
-        color="green"
-        onClick={handleCreate}
+          icon={AddIcon}
+          color="green"
+          onClick={handleCreate}
+          dataTestId={'add-jog-btn'}
         />
       ) : null}
 

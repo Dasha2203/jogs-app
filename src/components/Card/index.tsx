@@ -3,7 +3,7 @@ import { Props } from './types';
 
 const Card = ({ icon: Icon, subtitle, listProps, ...props }: Props) => {
   return (
-    <div className="card" {...props}>
+    <div className="card" data-testid={"jog-card"} {...props}>
       <div className="card__img">
         <Icon />
       </div>

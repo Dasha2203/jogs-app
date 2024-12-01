@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import './styles.css';
 import { Props } from './types';
 
-const ButtonIcon = ({ color = 'green', size = 'lg', icon: Icon, className, ...props }: Props) => {
+const ButtonIcon = ({ dataTestId, color = 'green', size = 'lg', icon: Icon, className, ...props }: Props) => {
   return (
     <button
       className={clsx(
@@ -17,6 +17,7 @@ const ButtonIcon = ({ color = 'green', size = 'lg', icon: Icon, className, ...pr
         },
         className
       )}
+      {...(dataTestId ? {'data-testId': dataTestId}: {})}
       {...props}
     >
       <Icon/>

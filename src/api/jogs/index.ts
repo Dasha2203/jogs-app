@@ -9,6 +9,7 @@ export const getJogs = async () => {
     return data.jogs;
   } catch (error) {
     console.log(error);
+    return null;
   }
 }
 
