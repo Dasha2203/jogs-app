@@ -22,6 +22,7 @@
 :root {
   --white-two: #fff;
   --white: #eaeaea;
+  --white-three: rgb(215, 215, 215);
   --apple-green: #7ed321;
   --baby-purple: #e990f9;
 }
@@ -63,11 +64,6 @@ body {
 
 .no-scroll-y {
   overflow-y: hidden;
-}
-
-.error {
-  color: red;
-  font-size: 1.4rem
 }
 
 .relative {
