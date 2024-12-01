@@ -7,6 +7,7 @@ import Loader from '../../Loader';
 import { REGEX_NUMBER } from '../../../const';
 import { Props } from './types';
 import './styles.css';
+import ErrorText from '../../ErrorText';
 
 const JogFormModal = ({ onSubmit, jog, isLoading, ...props }: Props) => {
   const [distance, setDistance] = useState(jog?.distance ? String(jog.distance) : '');
@@ -91,7 +92,7 @@ const JogFormModal = ({ onSubmit, jog, isLoading, ...props }: Props) => {
               onChange={handleChangeDate}
             />
           </div>
-          {formError && <span className="error">{formError}</span>}
+          {formError && <ErrorText text={formError} />}
           <Button as="button" type="submit" size="md">Save</Button>
         </form>
       )}

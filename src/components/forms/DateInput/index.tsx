@@ -1,6 +1,7 @@
 import { forwardRef, useRef, useState } from 'react';
 import './styles.css';
 import { Props } from './types';
+import ErrorText from '../../ErrorText';
 
 const DateInput = forwardRef<HTMLInputElement, Props>(
   ({
@@ -42,7 +43,7 @@ const DateInput = forwardRef<HTMLInputElement, Props>(
           onFocus={handleFocus}
           onBlur={handleBlur}
         />
-        {error && <span className="error">{error}</span>}
+        {error && <ErrorText text={error} />}
       </div>
     )
 });

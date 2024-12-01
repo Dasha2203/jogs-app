@@ -5,6 +5,7 @@ import Button from '../../components/buttons/Button';
 import Layout from '../../components/layout/Layout';
 import './styles.css';
 import { signin } from '../../api/auth/auth';
+import ErrorText from '../../components/ErrorText';
 
 const HomePage = () => {
   const [error, setError] = useState('');
@@ -34,7 +35,7 @@ const HomePage = () => {
       <div className="let-me-section">
         <BearIcon className="let-me-section__img" />
         <Button as="button" onClick={handleClick}>Let me in</Button>
-        {error && <span className="error">{error}</span>}
+        {error && <ErrorText text={error} />}
       </div>
     </Layout>
   )

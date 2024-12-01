@@ -1,4 +1,5 @@
 import { ChangeEvent, forwardRef } from 'react';
+import ErrorText from '../../ErrorText';
 import { Props } from './types';
 import './styles.css';
 
@@ -27,7 +28,7 @@ const Input = forwardRef<HTMLInputElement, Props>(
           onChange={handleChange}
           onClick={onClick}
         />
-        {error && <span className="error">{error}</span>}
+        {error && <ErrorText text={error} />}
       </div>
     )
 });
