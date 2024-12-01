@@ -9,7 +9,7 @@ const DateInput = forwardRef<HTMLInputElement, Props>(
     value,
     error,
     onChange,
-  }, ref) => {
+  }) => {
     const [inputType, setInputType] = useState('text');
     const dateInputRef = useRef<HTMLInputElement | null>(null);
 
