@@ -1,4 +1,4 @@
-.field {
+.form-add-jog .field {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,4 +17,20 @@
 .form-add-jog .button {
   margin-top: 2.875rem;
   width: 100%;
+}
+
+@media (max-width: 48rem) {
+  .form-add-jog .field {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .form-add-jog .input-field {
+    max-width: none;
+  }
+
+  .form-add-jog .field:not(:last-of-type) {
+    margin-bottom: 1.666rem;
+  }
 }

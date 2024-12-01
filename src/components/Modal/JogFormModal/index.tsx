@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Modal from '..';
 import Input from '../../forms/Input';
 import Button from '../../buttons/Button';
@@ -13,6 +13,14 @@ const JogFormModal = ({ onSubmit, jog, isLoading, ...props }: Props) => {
   const [time, setTime] = useState(jog?.time ? String(jog.time) : '');
   const [selectedDate, setSelectedDate] = useState(jog?.date ? jog.date.split('T')[0] : '');
   const [formError, setFormError] = useState('');
+
+  useEffect(() => {
+    document.body.classList.toggle('no-scroll-y');
+
+    return () => {
+      document.body.classList.toggle('no-scroll-y');
+    }
+  }, [])
 
   function handleChangeDistance(value: string) {
     setDistance(value.replace(REGEX_NUMBER, ''));
