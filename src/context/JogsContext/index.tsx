@@ -71,6 +71,7 @@ const JogsProvider = ({ children }: { children?: React.ReactNode }) => {
 
       if (data) {
         setJogs([data, ...jogs]);
+        setFilteredJogs([data, ...filteredJogs]);
       }
     } catch (error) {
       console.log(error);
