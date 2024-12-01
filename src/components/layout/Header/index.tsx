@@ -8,6 +8,7 @@ import MenuButton from './MenuButton';
 import { useState } from 'react';
 import clsx from 'clsx';
 import MobileNavigation from './MobileNavigation';
+import { Props } from './types';
 
 const headerNavigation = [
   {
@@ -24,7 +25,7 @@ const headerNavigation = [
   },
 ]
 
-const Header = () => {
+const Header = ({ type = 'full' }: Props) => {
   const { isOpenFilter, setIsOpenFilter } = useAppContext();
   const [ isOpenMenu, setIsOpenMenu ] = useState(false);
 
@@ -48,7 +49,7 @@ const Header = () => {
           <LogoIcon className="header__logo" />
         </NavLink>
 
-        {headerNavigation.length && (
+        {headerNavigation.length && type === 'full' && (
           <nav className={
             clsx(
               'header__navigation',
@@ -65,20 +66,24 @@ const Header = () => {
             ))}
           </nav>
         )}
-        <CheckButtonIcon
-          color="green"
-          ariaLabel={isOpenFilter ? 'Hide filter' : 'Open filter'}
-          isSelected={isOpenFilter}
-          onClick={handleToggleFilter}
-        >
-          <FilterIcon />
-        </CheckButtonIcon>
-        <MenuButton onClick={handleToggleMenu} />
-        <MobileNavigation
-          list={headerNavigation}
-          setIsOpen={handleToggleMenu}
-          isOpen={isOpenMenu}
-        />
+        {type === 'full' && (
+          <>
+            <CheckButtonIcon
+              color="green"
+              ariaLabel={isOpenFilter ? 'Hide filter' : 'Open filter'}
+              isSelected={isOpenFilter}
+              onClick={handleToggleFilter}
+            >
+              <FilterIcon />
+            </CheckButtonIcon>
+            <MenuButton onClick={handleToggleMenu} />
+            <MobileNavigation
+              list={headerNavigation}
+              setIsOpen={handleToggleMenu}
+              isOpen={isOpenMenu}
+            />
+          </>
+        )}
       </div>
     </header>
   )

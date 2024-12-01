@@ -2,10 +2,10 @@ import Header from '../Header';
 import { Props } from './types';
 import './styles.css';
 
-const Layout = ({ children }: Props) => {
+const Layout = ({ type = 'full', children }: Props) => {
   return (
     <div className="layout">
-      <Header />
+      <Header type={type} />
       <div className="layout__container">
         {children}
       </div>
