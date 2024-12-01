@@ -1,0 +1,55 @@
+.button-icon {
+  border: none;
+  background-color: transparent;
+  transition: opacity var(--transition);
+  cursor: pointer;
+  -webkit-tap-highlight-color:  transparent;
+}
+
+.button-icon:hover {
+  opacity: .7;
+}
+
+.button-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.button-icon_white {
+  color: var(--white-two);
+}
+
+.button-icon_green {
+  color: var(--apple-green);
+}
+
+.button-icon_purple {
+  color: var(--baby-purple);
+}
+
+.button-icon_gray {
+  color: #b0abab;
+}
+
+.button-icon_lg {
+  width: 3.75rem;
+  height: 3.75rem;
+}
+
+.button-icon_xs {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+@media (hover: none) {
+  .button-icon:hover {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 48rem) {
+  .button-icon_lg {
+    width: 3.916rem;
+    height: 3.916rem;
+  }
+}

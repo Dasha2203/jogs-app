@@ -1,0 +1,39 @@
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 1.666rem 2.083rem;
+  background-color: var(--white-two);
+  transform: translateY(-100%);
+  transition: transform var(--transition);
+  overflow: hidden;
+}
+
+.mobile-menu__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-menu_open {
+  transform: translateY(0);
+}
+
+.mobile-menu .logo-icon {
+  width: 100%;
+  max-width: 8.166rem;
+  color: var(--apple-green);
+}
+
+.mobile__navigation {
+  margin: auto 0;
+  text-align: center;
+  overflow-y: scroll;
+}
+
+.mobile__navigation ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2.118rem;
+}

@@ -1,0 +1,41 @@
+.button-check-icon {
+  width: 2.438rem;
+  height: 2.438rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--white-two);
+  border: solid 2px transparent;
+  transition: opacity var(--transition), color var(--transition), border-color var(--transition);
+  border-radius: 4px;
+}
+
+.button-check-icon:hover {
+  opacity: .7;
+}
+
+.button-check-icon svg {
+  width: 100%;
+  max-width: 1.625rem;
+}
+
+.button-check-icon_active.button-check-icon_green {
+  border-color: #62aa14;
+  color: #62aa14;
+}
+
+@media (hover: none) {
+  .button-check-icon:hover {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 48rem) {
+  .button-check-icon {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+}

@@ -1,0 +1,65 @@
+.list {
+  margin: 0.677rem auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.list .card {
+  margin: 0 auto;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.list .card:hover {
+  opacity: .7;
+}
+
+.section-jogs .loader {
+  margin: 1rem auto;
+  display: block;
+}
+
+.section-jogs .button-icon {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
+}
+
+.section-jogs .no-result-section {
+  margin: 0.677rem auto;
+}
+
+@media (hover: none) {
+  .list .card:hover {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 48rem) {
+  .list .card {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .list .card:not(:last-of-type) {
+    border-bottom: 0.166rem solid var(--white-three);
+  }
+
+  .section-jogs {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .section-jogs .button-icon {
+    bottom: 3.5rem;
+    right: 3.5rem;
+  }
+
+  .section-jogs .no-result-section {
+    margin-top: auto;
+    margin-bottom: 5.916rem;
+  }
+}

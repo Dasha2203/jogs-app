@@ -1,0 +1,28 @@
+.button {
+  border-radius: 3.6rem;
+  font-weight: bold;
+  color: var(--white-two);
+  background-color: transparent;
+  border-style: solid;
+  border-color: var(--white-two);
+  cursor: pointer;
+}
+
+.button_lg {
+  padding: 1.25rem 2.125rem 1.188rem;
+  font-size: 1.125rem;
+  border-width: 3px;
+}
+
+.button_md {
+  padding: 0.875rem 1rem 0.813rem;
+  font-size: 0.788rem;
+  border-width: 2px;
+}
+
+@media (max-width: 48rem) {
+  .button_lg {
+    padding: 1.666rem 2.83rem 1.583rem;
+    font-size: 1.5rem;
+  }
+}

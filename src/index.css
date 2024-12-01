@@ -1,0 +1,77 @@
+@font-face {
+  font-family: "SFUIText";
+  src: url("./assets/fonts/SFUIText-Bold.ttf") format("truetype"),
+    url("./assets/fonts/SFUIText-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "SFUIText";
+  src: url("./assets/fonts/SFUIText-Medium.ttf") format("truetype"),
+    url("./assets/fonts/SFUIText-Medium.woff2") format("woff2");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "SFUIText";
+  src: url("./assets/fonts/SFUIText-Regular.ttf") format("truetype"),
+    url("./assets/fonts/SFUIText-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+
+:root {
+  --white-two: #fff;
+  --white: #eaeaea;
+  --white-three: rgb(215, 215, 215);
+  --apple-green: #7ed321;
+  --baby-purple: #e990f9;
+
+  --transition: .3s ease;
+}
+
+html {
+  font-size: calc(100vw / 1440 * 16);
+}
+
+@media (max-width: 80rem) {
+  html {
+    font-size: calc(100vw / 1280 * 16);
+  }
+}
+
+@media (max-width: 64rem) {
+  html {
+    font-size: calc(100vw / 1024 * 16);
+  }
+}
+
+@media (max-width: 48rem) {
+  html {
+    font-size: calc(100vw / 500 * 16);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: 'SFUIText', sans-serif;
+}
+
+.no-scroll-y {
+  overflow-y: hidden;
+}
+
+.relative {
+  position: relative;
+}
+
+.w-full {
+  width: 100%;
+}

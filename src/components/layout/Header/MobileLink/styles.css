@@ -1,0 +1,10 @@
+.mobile__navigation-link {
+  text-transform: uppercase;
+  color: #454347;
+  font-size: 2.083rem;
+  font-weight: bold;
+}
+
+.mobile__navigation-link_active {
+  color: var(--apple-green);
+}

@@ -1,0 +1,22 @@
+.info {
+  padding-top: 5.313rem;
+}
+
+.info .title {
+  margin-bottom: 0.938rem;
+}
+
+.info .text:not(:last-of-type) {
+  margin-bottom: 1.875rem;
+}
+
+@media (max-width: 48rem) {
+  .info {
+    padding-top: 2rem;
+  }
+
+  .info .text:not(:last-of-type) {
+    margin-bottom: 3rem;
+  }
+}
+
