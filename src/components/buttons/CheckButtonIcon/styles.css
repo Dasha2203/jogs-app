@@ -9,7 +9,7 @@
   cursor: pointer;
   color: var(--white-two);
   border: solid 2px transparent;
-  transition: opacity .3s ease, color .3s ease, border-color .3s ease;
+  transition: opacity var(--transition), color var(--transition), border-color var(--transition);
   border-radius: 4px;
 }
 

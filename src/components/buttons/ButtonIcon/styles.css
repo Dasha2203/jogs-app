@@ -1,7 +1,7 @@
 .button-icon {
   border: none;
   background-color: transparent;
-  transition: opacity .3s ease;
+  transition: opacity var(--transition);
   cursor: pointer;
   -webkit-tap-highlight-color:  transparent;
 }

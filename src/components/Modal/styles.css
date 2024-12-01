@@ -38,7 +38,7 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  transition: opacity .3s ease;
+  transition: opacity var(--transition);
   -webkit-tap-highlight-color: transparent;
 }
 

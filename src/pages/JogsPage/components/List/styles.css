@@ -8,7 +8,7 @@
 .list .card {
   margin: 0 auto;
   cursor: pointer;
-  transition: all .3s ease;
+  transition: all var(--transition);
 }
 
 .list .card:hover {

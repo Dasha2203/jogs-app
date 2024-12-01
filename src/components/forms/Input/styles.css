@@ -15,7 +15,7 @@ input {
   outline: none;
   border-radius: 7px;
   border: solid 1px #979797;
-  transition: border-color .3s ease;
+  transition: border-color var(--transition);
   font-size: 1rem;
 }
 

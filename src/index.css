@@ -25,6 +25,8 @@
   --white-three: rgb(215, 215, 215);
   --apple-green: #7ed321;
   --baby-purple: #e990f9;
+
+  --transition: .3s ease;
 }
 
 html {
