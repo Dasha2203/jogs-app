@@ -10,9 +10,19 @@ const JogFilter = () => {
   const [top, setTop] = useState(0);
 
   useEffect(() => {
-    const header = document.querySelector('header');
-    const headerHeight = header?.clientHeight || 0;
-    setTop(headerHeight);
+    function handleChangePosition() {
+      const header = document.querySelector('header');
+      const headerHeight = header?.clientHeight || 0;
+
+      setTop(headerHeight);
+    }
+
+    handleChangePosition();
+    window.addEventListener('resize', handleChangePosition);
+
+    return () => {
+      window.removeEventListener('resize', handleChangePosition)
+    }
   }, [])
 
   function handleChangeStartDate (event: React.ChangeEvent<HTMLInputElement>) {
