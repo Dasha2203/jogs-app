@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import DateInput from '../../../../components/forms/DateInput';
 import './styles.css';
 import { useJogsContext } from '../../../../context/JogsContext';
+import { getHeightHeader } from '../../../../utils/getHeightHeader';
 
 const JogFilter = () => {
   const { getRangeJogs } = useJogsContext();
@@ -11,8 +12,7 @@ const JogFilter = () => {
 
   useEffect(() => {
     function handleChangePosition() {
-      const header = document.querySelector('header');
-      const headerHeight = header?.clientHeight || 0;
+      const headerHeight = getHeightHeader()
 
       setTop(headerHeight);
     }
